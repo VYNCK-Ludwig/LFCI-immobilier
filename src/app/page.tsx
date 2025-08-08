@@ -52,7 +52,7 @@ const admins: Admin[] = [
     password: 'Kooligan011',
     email: 'ludwig.vynck@expfrance.fr',
     phone: '06.83.93.41.67',
-    photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80'
+    photo: '/Ludo.jpg'
   },
   {
     id: 'frederic',
@@ -60,7 +60,7 @@ const admins: Admin[] = [
     password: 'Fred87100',
     email: 'frederic@ludwigfrederic-immobilier.fr',
     phone: '+33 5 55 65 43 21',
-    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80'
+    photo: '/Frederic.png'
   }
 ];
 
