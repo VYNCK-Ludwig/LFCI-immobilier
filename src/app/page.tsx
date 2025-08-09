@@ -1159,7 +1159,7 @@ if (currentPage === 'estimation') {
     className="rounded-full bg-white/20 p-1 backdrop-blur-sm transition-all hover:bg-white/30 hover:scale-110"
   >
     <img
-      src="https://graph.facebook.com/expfrance/picture?type=large"
+      src="./public/exp-france-logo.png" // Assurez-vous que le logo est dans le dossier public
       alt="EXP France"
       className="h-10 w-10 rounded-full object-cover"
     />
