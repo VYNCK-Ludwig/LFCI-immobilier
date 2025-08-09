@@ -65,77 +65,11 @@ const admins: Admin[] = [
   }
 ];
 
-const initialProperties: Property[] = [
-  {
-    id: '1',
-    title: 'Château de Caractère',
-    type: 'maison',
-    location: 'Guéret, Creuse',
-    price: 650000,
-    bedrooms: 6,
-    bathrooms: 3,
-    surface: 400,
-    dpe: 'C',
-    ges: 'D',
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-    ],
-    description: "Magnifique château du 18ème siècle entièrement rénové avec des matériaux d'exception. Cette propriété d'exception offre des prestations haut de gamme dans un cadre idyllique. Située dans un parc paysager de 2 hectares, elle bénéficie d'une vue imprenable sur la vallée.",
-    features: ['Parc de 2 hectares', 'Cave à vin', 'Système de sécurité', 'Garage 4 voitures', 'Piscine chauffée', 'Climatisation'],
-    addedBy: 'ludwig'
-  },
-  {
-    id: '2',
-    title: 'Maison Bourgeoise',
-    type: 'maison',
-    location: 'Moulins, Allier',
-    price: 420000,
-    bedrooms: 4,
-    bathrooms: 2,
-    surface: 280,
-    dpe: 'B',
-    ges: 'C',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1561501900-3701fa6a0864?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-    ],
-    description: "Élégante maison bourgeoise de charme située en centre-ville. Rénovée avec goût en conservant l'authenticité des matériaux nobles. Idéale pour une famille recherchant le confort moderne dans un cadre historique.",
-    features: ['Centre-ville', 'Jardin paysager', 'Cheminées d\'époque', 'Garage 2 voitures', 'Terrasse', 'Cave'],
-    addedBy: 'frederic'
-  },
-  {
-    id: '3',
-    title: 'Propriété Viticole',
-    type: 'maison',
-    location: 'Tulle, Corrèze',
-    price: 890000,
-    bedrooms: 5,
-    bathrooms: 4,
-    surface: 350,
-    dpe: 'A',
-    ges: 'B',
-    image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1522444195799-478538b28823?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1571055107559-3e67626fa8be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-    ],
-    description: "Exceptional domaine viticole avec chai moderne et équipements dernière génération. Production de vins AOC reconnue internationalement. Propriété de prestige incluant habitation principale et locaux d'exploitation.",
-    features: ['Vignoble 15 hectares', 'Chai moderne', 'Cave de dégustation', 'Hangar agricole', 'Piscine à débordement', 'Vue panoramique'],
-    addedBy: 'ludwig'
-  }
-];
-
 export default function Home() {
   const [currentImage, setCurrentImage] = useState(0);
   const [currentPage, setCurrentPage] = useState<'home' | 'properties' | 'admin' | 'property-detail' | 'estimation'>('home');
   const [selectedProperty, setSelectedProperty] = useState<Property | null>(null);
-  const [properties, setProperties] = useState<Property[]>(initialProperties);
+  const [properties, setProperties] = useState<Property[]>([]);
   const [isAdminMode, setIsAdminMode] = useState(false);
   const [currentAdmin, setCurrentAdmin] = useState<Admin | null>(null);
   const [showPasswordModal, setShowPasswordModal] = useState(false);
