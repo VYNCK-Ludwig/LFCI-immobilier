@@ -1159,7 +1159,7 @@ if (currentPage === 'estimation') {
     className="rounded-full bg-white/20 p-1 backdrop-blur-sm transition-all hover:bg-white/30 hover:scale-110"
   >
     <img
-      src="./public/logo-exp.png" // Assurez-vous que le logo est dans le dossier public
+      src="/logo-exp.png" // Assurez-vous que le logo est dans le dossier public
       alt="EXP France"
       className="h-10 w-10 rounded-full object-cover"
     />
