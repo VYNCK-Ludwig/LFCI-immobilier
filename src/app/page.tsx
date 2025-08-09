@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Facebook, User, Phone, Bed, Bath, Square, MapPin, Shield, Zap, Upload, X, Check, Mail, Home as HomeIcon, ArrowLeft } from 'lucide-react';
+import EstimationPage from './estimation'; // adapte le chemin si nécessaire
 
 const images = [
   {
@@ -132,7 +133,7 @@ const initialProperties: Property[] = [
 
 export default function Home() {
   const [currentImage, setCurrentImage] = useState(0);
-  const [currentPage, setCurrentPage] = useState<'home' | 'properties' | 'admin' | 'property-detail'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'properties' | 'admin' | 'property-detail' | 'estimation'>('home');
   const [selectedProperty, setSelectedProperty] = useState<Property | null>(null);
   const [properties, setProperties] = useState<Property[]>(initialProperties);
   const [isAdminMode, setIsAdminMode] = useState(false);
@@ -1003,6 +1004,29 @@ export default function Home() {
     );
   }
 
+  // Estimation Page
+if (currentPage === 'estimation') {
+  return (
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="bg-white p-8 rounded-lg shadow-md max-w-xl w-full">
+        <button
+          onClick={() => setCurrentPage('home')}
+          className="text-blue-600 hover:text-blue-800 font-semibold mb-4"
+        >
+          ← Retour à l'accueil
+        </button>
+        <h1 className="text-3xl font-bold text-center text-blue-600 mb-6">
+          Estimez votre bien immobilier
+        </h1>
+        <p className="text-gray-700 text-center">
+          Cette page vous permettra bientôt d'obtenir une estimation gratuite de votre propriété.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+
   // Home Page
   return (
     <div className="relative h-screen w-full overflow-hidden">
@@ -1115,6 +1139,16 @@ export default function Home() {
             Découvrir Nos Biens
           </button>
         </div>
+
+        {/* Bouton Estimation en bas à gauche */}
+<div className="absolute bottom-6 left-6 z-20">
+  <button
+    onClick={() => setCurrentPage('estimation')}
+    className="rounded-full bg-orange-500 px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-orange-600 hover:scale-105 md:px-12 md:py-5 md:text-xl"
+  >
+    Estimation
+  </button>
+</div>
       </div>
 
       {/* Carousel Indicators */}
