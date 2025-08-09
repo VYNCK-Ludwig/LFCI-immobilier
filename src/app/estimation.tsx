@@ -7,7 +7,7 @@ type Props = {
   goHome: () => void;
 };
 
-export default function EstimationPage({ goHome }: Props) {
+export default function Estimation({ goHome }: Props) {
   const [form, setForm] = useState({
     location: '',
     type: '',
