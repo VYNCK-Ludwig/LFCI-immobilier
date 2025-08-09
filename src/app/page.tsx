@@ -1153,7 +1153,7 @@ if (currentPage === 'estimation') {
       <div className="absolute bottom-6 right-6 z-20 flex space-x-4">
   {/* EXP France */}
   <a
-    href="https://www.facebook.com/eXp.France.immobilier"
+    href="https://www.expfrance.fr"
     target="_blank"
     rel="noopener noreferrer"
     className="rounded-full bg-white/20 p-1 backdrop-blur-sm transition-all hover:bg-white/30 hover:scale-110"
