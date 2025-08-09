@@ -1173,7 +1173,7 @@ if (currentPage === 'estimation') {
   className="rounded-full bg-white/20 p-1 backdrop-blur-sm transition-all hover:bg-white/30 hover:scale-110"
 >
     <img
-    src="https://graph.facebook.com/100075437616425/picture?type=large"
+    src="/Ludo.jpg" // Assurez-vous que l'image est dans le dossier public
     alt="Ludo"
     className="h-10 w-10 rounded-full object-cover"
   />
@@ -1187,7 +1187,7 @@ if (currentPage === 'estimation') {
     className="rounded-full bg-white/20 p-1 backdrop-blur-sm transition-all hover:bg-white/30 hover:scale-110"
   >
     <img
-      src="https://graph.facebook.com/559534404/picture?type=large"
+      src="/Frederic.jpg" // Assurez-vous que l'image est dans le dossier public
       alt="Frédéric"
       className="h-10 w-10 rounded-full object-cover"
     />
