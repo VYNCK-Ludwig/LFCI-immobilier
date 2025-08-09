@@ -1,9 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { estimatePrice } from '@/lib/estimate'; // adapte le chemin si nécessaire
+import { estimatePrice } from '@/lib/estimate';
 
-export default function EstimationPage() {
+type Props = {
+  goHome: () => void;
+};
+
+export default function EstimationPage({ goHome }: Props) {
   const [form, setForm] = useState({
     location: '',
     type: '',
@@ -32,80 +36,17 @@ export default function EstimationPage() {
         onSubmit={handleSubmit}
         className="bg-white p-8 rounded-xl shadow-lg max-w-xl w-full space-y-6"
       >
+        <button
+          type="button"
+          onClick={goHome}
+          className="text-blue-600 hover:text-blue-800 font-semibold"
+        >
+          ← Retour à l'accueil
+        </button>
+
         <h1 className="text-3xl font-bold text-blue-600 text-center">Estimation Immobilière</h1>
 
-        <select
-          name="location"
-          value={form.location}
-          onChange={handleChange}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-        >
-          <option value="">Choisissez un département</option>
-          <option value="Allier">Allier</option>
-          <option value="Creuse">Creuse</option>
-          <option value="Corrèze">Corrèze</option>
-          <option value="Haute-Vienne">Haute-Vienne</option>
-        </select>
-
-        <select
-          name="type"
-          value={form.type}
-          onChange={handleChange}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-        >
-          <option value="">Type de bien</option>
-          <option value="maison">Maison</option>
-          <option value="appartement">Appartement</option>
-          <option value="terrain">Terrain</option>
-        </select>
-
-        <input
-          type="number"
-          name="surface"
-          value={form.surface}
-          onChange={handleChange}
-          placeholder="Surface habitable (m²)"
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-        />
-
-        <input
-          type="number"
-          name="bedrooms"
-          value={form.bedrooms}
-          onChange={handleChange}
-          placeholder="Nombre de chambres"
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-        />
-
-        <input
-          type="number"
-          name="bathrooms"
-          value={form.bathrooms}
-          onChange={handleChange}
-          placeholder="Nombre de salles de bain"
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-        />
-
-        <input
-          type="number"
-          name="year"
-          value={form.year}
-          onChange={handleChange}
-          placeholder="Année de construction"
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-        />
-
-        <select
-          name="condition"
-          value={form.condition}
-          onChange={handleChange}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-        >
-          <option value="">État du bien</option>
-          <option value="neuf">Neuf</option>
-          <option value="bon">Bon état</option>
-          <option value="à rénover">À rénover</option>
-        </select>
+        {/* ... le reste de ton formulaire ... */}
 
         <button
           type="submit"

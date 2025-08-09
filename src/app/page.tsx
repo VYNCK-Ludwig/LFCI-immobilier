@@ -1006,24 +1006,7 @@ export default function Home() {
 
   // Estimation Page
 if (currentPage === 'estimation') {
-  return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-md max-w-xl w-full">
-        <button
-          onClick={() => setCurrentPage('home')}
-          className="text-blue-600 hover:text-blue-800 font-semibold mb-4"
-        >
-          ← Retour à l'accueil
-        </button>
-        <h1 className="text-3xl font-bold text-center text-blue-600 mb-6">
-          Estimez votre bien immobilier
-        </h1>
-        <p className="text-gray-700 text-center">
-          Cette page vous permettra bientôt d'obtenir une estimation gratuite de votre propriété.
-        </p>
-      </div>
-    </div>
-  );
+  return <EstimationPage goHome={() => setCurrentPage('home')} />;
 }
 
 
