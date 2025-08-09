@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Facebook, User, Phone, Bed, Bath, Square, MapPin, Shield, Zap, Upload, X, Check, Mail, Home as HomeIcon, ArrowLeft } from 'lucide-react';
-import EstimationPage from './estimation'; // adapte le chemin si nécessaire
+import Estimation from './estimation'; // adapte le chemin si nécessaire
 
 const images = [
   {
@@ -1006,7 +1006,7 @@ export default function Home() {
 
   // Estimation Page
 if (currentPage === 'estimation') {
-  return <EstimationPage goHome={() => setCurrentPage('home')} />;
+  return <Estimation goHome={() => setCurrentPage('home')} />;
 }
 
 
