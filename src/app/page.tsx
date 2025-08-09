@@ -49,7 +49,7 @@ const admins: Admin[] = [
   {
     id: 'ludwig',
     name: 'Ludwig',
-    password: 'Kooligan011',
+    password: 'Kooligan011.',
     email: 'ludwig.vynck@expfrance.fr',
     phone: '06.83.93.41.67',
     photo: '/Ludo.jpg'
@@ -57,8 +57,8 @@ const admins: Admin[] = [
   {
     id: 'frederic',
     name: 'Frédéric',
-    password: 'Fred87100',
-    email: 'frederic@ludwigfrederic-immobilier.fr',
+    password: 'Fred87100.',
+    email: 'frederic.autef@expfrance.fr',
     phone: '+33 5 55 65 43 21',
     photo: '/Frederic.png'
   }
@@ -159,6 +159,33 @@ export default function Home() {
   const [showImageZoom, setShowImageZoom] = useState(false);
   const [zoomedImage, setZoomedImage] = useState<string>('');
   const [detailCurrentImage, setDetailCurrentImage] = useState(0);
+
+  // ✅ Nouvelle fonction ajoutée ici
+  const handleMultipleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files) return;
+
+    const previews: string[] = [];
+
+    Array.from(files).forEach((file, index) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const result = e.target?.result as string;
+        previews.push(result);
+
+        if (previews.length === files.length) {
+          setPropertyImages(prev => [...prev, ...previews]);
+
+          if (!useCustomImage || imagePreview === '') {
+            setImagePreview(previews[0]);
+            setNewProperty({ ...newProperty, image: previews[0] });
+            setUseCustomImage(true);
+          }
+        }
+      };
+      reader.readAsDataURL(file);
+    });
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -668,7 +695,8 @@ export default function Home() {
                   <input
                     type="file"
                     accept="image/*"
-                    onChange={handleImageUpload}
+                    multiple //✅ permet plusieurs fichiers
+                    onChange={handleMultipleImageUpload}
                     className="hidden"
                     id="image-upload"
                   />
