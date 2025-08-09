@@ -1151,16 +1151,48 @@ if (currentPage === 'estimation') {
 
       {/* Social Icons */}
       <div className="absolute bottom-6 right-6 z-20 flex space-x-4">
-        <button className="rounded-full bg-white/20 p-3 text-white backdrop-blur-sm transition-all hover:bg-white/30 hover:scale-110">
-          <Facebook className="h-5 w-5" />
-        </button>
-        <button className="rounded-full bg-white/20 p-3 text-white backdrop-blur-sm transition-all hover:bg-white/30 hover:scale-110">
-          <User className="h-5 w-5" />
-        </button>
-        <button className="rounded-full bg-white/20 p-3 text-white backdrop-blur-sm transition-all hover:bg-white/30 hover:scale-110">
-          <Phone className="h-5 w-5" />
-        </button>
-      </div>
-    </div>
+  {/* EXP France */}
+  <a
+    href="https://www.facebook.com/expfrance"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="rounded-full bg-white/20 p-1 backdrop-blur-sm transition-all hover:bg-white/30 hover:scale-110"
+  >
+    <img
+      src="https://graph.facebook.com/expfrance/picture?type=large"
+      alt="EXP France"
+      className="h-10 w-10 rounded-full object-cover"
+    />
+  </a>
+
+  {/* Ludo */}
+  <a
+  href="https://www.facebook.com/profile.php?id=100075437616425"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="rounded-full bg-white/20 p-1 backdrop-blur-sm transition-all hover:bg-white/30 hover:scale-110"
+>
+    <img
+    src="https://graph.facebook.com/100075437616425/picture?type=large"
+    alt="Ludo"
+    className="h-10 w-10 rounded-full object-cover"
+  />
+</a>
+
+  {/* Frédéric */}
+  <a
+    href="https://www.facebook.com/profile.php?id=559534404" // remplace par son vrai nom d'utilisateur Facebook
+    target="_blank"
+    rel="noopener noreferrer"
+    className="rounded-full bg-white/20 p-1 backdrop-blur-sm transition-all hover:bg-white/30 hover:scale-110"
+  >
+    <img
+      src="https://graph.facebook.com/559534404/picture?type=large"
+      alt="Frédéric"
+      className="h-10 w-10 rounded-full object-cover"
+    />
+  </a>
+</div>
+</div>
   );
 }
