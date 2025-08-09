@@ -391,7 +391,14 @@ export default function Home() {
                   <img
                     src={selectedProperty.images[detailCurrentImage]}
                     alt={selectedProperty.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover cursor-zoom-in"
+                    onClick={() => {
+                      const image = selectedProperty.images?.[detailCurrentImage];
+                      if (image) {
+                        setZoomedImage(image);
+                        setShowImageZoom(true);
+                    }}
+                    }
                   />
                   {selectedProperty.images.length > 1 && (
                     <>
@@ -538,6 +545,20 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+
+                {/* Zoomed Image Modal */}
+                  {showImageZoom && zoomedImage && (
+                <div
+                  className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+                  onClick={() => setShowImageZoom(false)}
+                >
+                  <img
+                    src={zoomedImage}
+                    alt="Zoomed"
+                    className="max-w-4xl max-h-[90vh] object-contain rounded-lg shadow-lg"
+                />
+                </div>
+              )}
 
                 <div className="space-y-3">
                   <button className="w-full bg-orange-500 text-white py-3 px-4 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
