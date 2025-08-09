@@ -3,11 +3,7 @@
 import { useState } from 'react';
 import { estimatePrice } from '@/lib/estimate';
 
-type Props = {
-  goHome: () => void;
-};
-
-export default function Estimation({ goHome }: Props) {
+export default function Estimation({ goHome }: { goHome: () => void }) {
   const [form, setForm] = useState({
     location: '',
     type: '',
@@ -46,7 +42,8 @@ export default function Estimation({ goHome }: Props) {
 
         <h1 className="text-3xl font-bold text-blue-600 text-center">Estimation Immobilière</h1>
 
-        {/* ... le reste de ton formulaire ... */}
+        {/* Ton formulaire ici : location, type, surface, etc. */}
+        {/* ... */}
 
         <button
           type="submit"
