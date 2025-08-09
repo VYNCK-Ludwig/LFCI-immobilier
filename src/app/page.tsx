@@ -531,18 +531,11 @@ export default function Home() {
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center">
                     <Phone className="h-5 w-5 text-orange-500 mr-3" />
-                    <span className="text-gray-700">+33 5 55 12 34 56</span>
+                    <span className="text-gray-700">06.83.93.41.67 ou 06.22.73.31.35</span>
                   </div>
                   <div className="flex items-center">
                     <Mail className="h-5 w-5 text-orange-500 mr-3" />
-                    <span className="text-gray-700">contact@ludwigfrederic-immobilier.fr</span>
-                  </div>
-                  <div className="flex items-start">
-                    <HomeIcon className="h-5 w-5 text-orange-500 mr-3 mt-1" />
-                    <div>
-                      <div className="text-gray-700">123 Avenue de la République</div>
-                      <div className="text-gray-700">87000 Limoges, France</div>
-                    </div>
+                    <span className="text-gray-700">ludwig.vynck@expfrance.fr ou frederic.autef@expfrance.fr</span>
                   </div>
                 </div>
 
