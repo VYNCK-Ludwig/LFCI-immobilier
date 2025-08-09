@@ -1187,7 +1187,7 @@ if (currentPage === 'estimation') {
     className="rounded-full bg-white/20 p-1 backdrop-blur-sm transition-all hover:bg-white/30 hover:scale-110"
   >
     <img
-      src="/Frederic.jpg" // Assurez-vous que l'image est dans le dossier public
+      src="/Frederic.png" // Assurez-vous que l'image est dans le dossier public
       alt="Frédéric"
       className="h-10 w-10 rounded-full object-cover"
     />
