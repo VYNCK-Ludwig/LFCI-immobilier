@@ -549,15 +549,23 @@ export default function Home() {
                 {/* Zoomed Image Modal */}
                   {showImageZoom && zoomedImage && (
                 <div
-                  className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+                  className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 transition-opacity duration-300"
                   onClick={() => setShowImageZoom(false)}
                 >
+                <div className="relative max-w-full max-h-full p-4">
                   <img
                     src={zoomedImage}
-                    alt="Zoomed"
-                    className="max-w-4xl max-h-[90vh] object-contain rounded-lg shadow-lg"
+                     alt="Zoomed"
+                      className="w-auto h-auto max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl transform scale-100 transition-transform duration-300"
                 />
+                  <button
+                    onClick={() => setShowImageZoom(false)}
+                    className="absolute top-4 right-4 bg-white text-gray-800 rounded-full p-2 shadow hover:bg-gray-200"
+                >
+                   ✕
+                  </button>
                 </div>
+              </div>
               )}
 
                 <div className="space-y-3">
